@@ -27,6 +27,14 @@ resource "docker_container" "bind" {
   ports {
     internal = 53
     external = "${var.bind_port}"
+    protocol = "TCP"
+  }
+
+
+  ports {
+    internal = 53
+    external = "${var.bind_port}"
+    protocol = "UDP"
   }
 
   ports {
